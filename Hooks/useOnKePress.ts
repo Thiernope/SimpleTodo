@@ -7,6 +7,7 @@ export const useOnKeyPress = (cb: cbFunction, targetKey:string) => {
    useEffect(()=>{
     callbackRef.current = cb;
    })
+   
     useEffect(()=>{
         const keyPressHandler = (event:any)=>{
        if(event.key === targetKey) {
