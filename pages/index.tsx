@@ -7,7 +7,6 @@ import useTodo from '@/Hooks/useTodo';
 import { ChangeEvent } from 'react';
 import { useOnKeyPress } from '../Hooks/useOnKePress';
 
-
 export default function Home() {
   const { 
     currentItem,
