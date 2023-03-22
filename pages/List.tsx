@@ -18,7 +18,7 @@ type listProp = {
 const List = ({items, removeItem, updateItem}: listProp) => {
   return (
     <>
-        {items.map((item ) => (
+        {items?.map((item: Item ) => (
         <div key={item.id} className="mb-6 border-solid border-b-2 border-light-blue-500 p-4 w-full lg:w-3/6 h-14 flex justify-between items-center">
         <div className="flex justify-center items-start">
           {item.completed === true ? <AiFillCheckSquare className="text-gray-500 text-3xl cursor-pointer" onClick={() => updateItem(item.id)}/>: <ImCheckboxUnchecked className="text-gray-500 text-2xl cursor-pointer" onClick={() => updateItem(item.id)}/>}

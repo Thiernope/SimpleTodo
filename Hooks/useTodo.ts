@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 type Item = {
     id: string;
@@ -8,14 +9,14 @@ type Item = {
 
 const useTodo = () => {
     const [currentItem, setCurrentItem] = useState<Item>({id:"", name: "", completed: false});
-const [items, setItems] = useState<Item[]>([]);
+const [items, setItems] = useState<Item[]>([{id: uuidv4(), name: "Default Todo", completed: false }]);
 
 const saveToLocalStorage = (items: Item[]) => {
-  localStorage.setItem('myObjects', JSON.stringify(items));
+  localStorage.setItem('myTodos', JSON.stringify(items));
 };
 
 const getFromLocalStorage = () => {
-  const items = localStorage.getItem('myObjects');
+  const items = localStorage.getItem('myTodos');
   if (items) {
     return JSON.parse(items) as Item[];
   }
