@@ -9,7 +9,7 @@ type Item = {
 
 const useTodo = () => {
     const [currentItem, setCurrentItem] = useState<Item>({id:"", name: "", completed: false});
-const [items, setItems] = useState<Item[]>([{id: uuidv4(), name: "Default Todo", completed: false }]);
+const [items, setItems] = useState<Item[]>([]);
 
 const saveToLocalStorage = (items: Item[]) => {
   localStorage.setItem('myTodos', JSON.stringify(items));
